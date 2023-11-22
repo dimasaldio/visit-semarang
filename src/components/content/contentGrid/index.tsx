@@ -40,7 +40,7 @@ const ContentGrid: React.FC<IListWisata> = ({
           <>
             <Link href={`/${href}/${content[0].id}`}>
               <div
-                className="w-full h-full rounded-2xl bg-cover bg-top-left hover:scale-105 overflow-hidden"
+                className="w-full h-full rounded-2xl bg-cover bg-center hover:scale-105 overflow-hidden"
                 style={{ backgroundImage: `url(${content[0].urlImg})` }}
               >
                 <div className="w-full h-full bg-black bg-opacity-50">
@@ -71,7 +71,7 @@ const ContentGrid: React.FC<IListWisata> = ({
           content.slice(0, 3).map((item, index: number) => (
             <Link key={index} href={`/${href}/${item.id}`}>
               <div
-                className="w-full h-full rounded-2xl bg-top-right hover:scale-105 overflow-hidden"
+                className="w-full h-full rounded-2xl bg-center bg-cover hover:scale-105 overflow-hidden"
                 style={{ backgroundImage: `url(${item.urlImg})` }}
               >
                 <div className="w-full h-full bg-black bg-opacity-50">

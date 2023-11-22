@@ -5,17 +5,17 @@ const dummyDataWisata: IListWisata = {
   content: [
     {
       id: 1,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/DLtByz0.jpg",
+      urlImg: "https://www.tilytravels.com/uploads/3/7/7/1/37712685/semarang-1000-186_orig.jpg",
       subtitle: "Jelajahi Keindahan Kampung Pelangi Semarang Sekarang!",
     },
     {
       id: 2,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/uazJwqp.jpg",
+      urlImg: "https://mutiaradwick.com/wp-content/uploads/2020/10/Semarang-Grand-Maerakaca-4.jpg",
       subtitle: "Tiba di Surga Tersembunyi, Grand Maerakaca Menunggu!",
     },
     {
       id: 3,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/cWoiGPg.jpg",
+      urlImg: "https://wisatalengkap.com/wp-content/uploads/2017/07/Pantai-Marina.jpg",
       subtitle: "Pantai Tanjung Emas: Destinasi Liburan Impian!",
     },
   ],
@@ -26,17 +26,17 @@ const dummyDataHeritage: IListWisata = {
   content: [
     {
       id: 1,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/ID0kecx.jpg",
+      urlImg: "https://i.pinimg.com/originals/5d/e6/28/5de628eed0c2258f3a836be988d01aad.jpg",
       subtitle: "Lawang Sewu: Portal Indah Menuju Warisan Sejarah yang Unik",
     },
     {
       id: 2,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/sFKPeph.jpg",
+      urlImg: "https://1.bp.blogspot.com/-PnDnKR8XGFo/W__kfZ2I64I/AAAAAAAABws/WT09chiMj7AO-QSoyPaWQAICY14TFGsjwCLcBGAs/s1600/klenteng%2Bsam%2Bpo%2Bkong.png",
       subtitle: "Sam Poo Kong: Sejarah Hidup Kembali",
     },
     {
       id: 3,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/WUAryst.jpg",
+      urlImg: "https://kissparry.files.wordpress.com/2019/05/tugu_muda_lawang_sewu_kota_semarang_2019_sam9042.jpg",
       subtitle: "Tugu Muda: Elegansi Sejarah Kota Semarang",
     },
   ],
@@ -47,17 +47,17 @@ const dummyDataFestival: IListWisata = {
   content: [
     {
       id: 1,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/YqCKnSI.jpg",
+      urlImg: "https://phinemo.com/wp-content/uploads/2018/03/ogoh-ogoh-semarang.jpg",
       subtitle: "Euforia Ogoh-Ogoh yang Menggetarkan Jiwa",
     },
     {
       id: 2,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/lLOpVuu.jpg",
+      urlImg: "https://semarangkota.go.id/packages/upload/photo/2019-07-04/WhatsApp-Image-2019-07-04-at-10.25.42.jpeg",
       subtitle: "Semarang Night Carnival: Kehangatan Malam Megah",
     },
     {
       id: 3,
-      urlImg: "https://semarangkota.go.id/packages/upload/galeri/XFUEgDv.jpg",
+      urlImg: "https://deathseal.files.wordpress.com/2017/05/semarang-1-15-large.jpg",
       subtitle: "Festival Gebyur: Magis yang Menggetarkan Semua",
     },
   ],
