@@ -4,7 +4,7 @@ import { Divider } from "antd";
 import Link from "next/link";
 import IListWisata from "@/interface";
 
-const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader }) => {
+const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader, href }) => {
   return (
     <div className="w-full h-full flex flex-col">
       {!isHeader && (
@@ -32,7 +32,7 @@ const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader }) => {
                 </p>
               </div>
               <div>
-                <Link href="/">
+                <Link href={`/${href}`}>
                   <p className="text-[#F5F7F8] font-bold text-md text-left text-shadow-lg mt-10">
                     Jelajahi {title}{" "}
                     <span>

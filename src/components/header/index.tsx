@@ -22,12 +22,12 @@ const Header: React.FC = () => {
           </div>
         </Link>
         <div className="flex flex-row">
-          {dataDummyNavbar.listMenu.map((item: string, index: number) => (
+          {dataDummyNavbar.menu.map((item, index: number) => (
             <div
               className="mr-12 font-bold hover:border-b-4 border-[#C70039] text-lg"
               key={index}
             >
-              <Link href="/">{item}</Link>
+              <Link href={item.href}>{item.name}</Link>
             </div>
           ))}
         </div>

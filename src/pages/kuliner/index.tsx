@@ -2,22 +2,22 @@ import React from "react";
 import Layout from "@/components/layout";
 import ContentFull from "@/components/content/contentFull";
 import { dummyDataHeaderLiburan } from "../../dummy";
-import { dummyDataWisata } from "../../dummy";
+import { dummyDataKuliner } from "../../dummy";
 import Link from "next/link";
 
-const Holiday: React.FC = () => {
-  const data = dummyDataWisata.content;
+const Kuliner: React.FC = () => {
+  const data = dummyDataKuliner.content;
 
   return (
     <Layout>
       <div>
         <ContentFull
           isHeader={true}
-          title="Liburan Semarang"
+          title="Festival Semarang"
           content={dummyDataHeaderLiburan.content}
         />
         <div className="mx-[180px]">
-          {data.map((item, index) => (
+          {data.slice(1,data.length).map((item, index) => (
             <div
               className="grid grid-cols-2 gap-4 w-full justify-center border-t-2"
               key={index}
@@ -56,8 +56,8 @@ const Holiday: React.FC = () => {
                   in mollis nunc sed id semper risus. Accumsan tortor posuere ac
                   ut consequat semper.
                 </p>
-                <Link href={`/holiday/${item.id}`}>
-                  <button className="cursor-pointer hover:border-b-2 text-[#265073] my-4 font-bold">
+                <Link href={`/kuliner/${item.id}`}>
+                  <button className="cursor-pointer hover:border-b-2 text-[#265073] font-bold my-4">
                     See More
                   </button>
                 </Link>
@@ -78,4 +78,4 @@ const Holiday: React.FC = () => {
   );
 };
 
-export default Holiday;
+export default Kuliner;

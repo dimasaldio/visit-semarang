@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FooterSlider from "./component/footerSlider";
 import { dummyDataSlider } from "@/dummy";
 
@@ -6,11 +6,10 @@ const SliderTop: React.FC = () => {
   const [key, setKey] = useState(0);
   return (
     <div
-      className="w-full h-[700px] text-white"
+      className="w-screen h-[700px] text-white bg-cover"
       style={{
         backgroundImage: `url(${dummyDataSlider[key].urlImg})`,
         transition: "background-image 0.5s ease-in-out",
-        backgroundSize: "1600px 800px",
       }}
     >
       <div className="flex flex-col justify-between h-full bg-black bg-opacity-[0.5]">

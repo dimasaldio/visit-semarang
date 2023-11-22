@@ -13,7 +13,7 @@ const Festival: React.FC = () => {
       <div>
         <ContentFull
           isHeader={true}
-          title={dummyDataHeaderLiburan.title}
+          title="Festival Semarang"
           content={dummyDataHeaderLiburan.content}
         />
         <div className="mx-[180px]">

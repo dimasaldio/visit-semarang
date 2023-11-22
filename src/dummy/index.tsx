@@ -67,9 +67,29 @@ const dummyDataKuliner: IListWisata = {
   title: "Kuliner Andalan",
   content: [
     {
-      id: 1,
+      id: 0,
       urlImg: "https://semarangkota.go.id/packages/upload/galeri/sCtX1yO.jpg",
       subtitle: "Ketika Kepuasan Rasa Menjadi Petualangan Kulinermu",
+    },
+    {
+      id: 1,
+      urlImg: "https://manual.co.id/wp-content/uploads/2016/12/Tahu-Pong-Semarang-Street-1.jpg",
+      subtitle: "Tahu Pong",
+    },
+    {
+      id: 2,
+      urlImg: "https://www.reseppedia.com/storage/upload/Resep_Tahu_Gimbal_Khas_Semarang.jpg",
+      subtitle: "Tahu Gimbal",
+    },
+    {
+      id: 3,
+      urlImg: "https://1.bp.blogspot.com/-k35EBPX88wM/UWV-AJcYcBI/AAAAAAAAFjE/yq0Ap3_syUA/s1600/lumpia-semarang.jpg",
+      subtitle: "Lumpia",
+    },
+    {
+      id: 4,
+      urlImg: "https://cdn-2.tstatic.net/travel/foto/bank/images/leker-paimo.jpg",
+      subtitle: "Leker Paimo",
     },
   ],
 };
@@ -112,8 +132,26 @@ const dummyDataSlider = [
 
 const dataDummyNavbar = {
   logo: "https://1.bp.blogspot.com/-_htlsqmoegY/WgUv0iXCbwI/AAAAAAAAEto/Ye4R81LIlsEndxNgV6KTCcmbLeFrav88QCLcBGAs/s1600/kota%2Bsemarang.png",
-  listMenu: ["Festival", "Kuliner", "Heritage", "Wisata"],
+  menu: [
+    {
+      name: "Festival",
+      href: "/festival"
+    },
+    {
+      name: "Kuliner",
+      href: "/kuliner"
+    },
+    {
+      name: "Heritage",
+      href: "/heritage"
+    },
+    {
+      name: "Wisata",
+      href: "/holiday"
+    }
+  ]
 };
+
 
 const imagesCaraousel = [
   "https://semarangkota.go.id/packages/upload/galeri/36mOJOx.jpg",

@@ -13,7 +13,7 @@ const Heritage: React.FC = () => {
       <div>
         <ContentFull
           isHeader={true}
-          title={dummyDataHeaderLiburan.title}
+          title="Semarang Heritage"
           content={dummyDataHeaderLiburan.content}
         />
         <div className="mx-[180px]">

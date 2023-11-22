@@ -44,6 +44,7 @@ const Index: React.FC = () => {
         <ContentFull
           title={dummyDataKuliner.title}
           content={dummyDataKuliner.content}
+          href="kuliner"
         />
         <Divider />
       </main>
