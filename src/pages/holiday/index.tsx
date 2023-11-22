@@ -5,7 +5,7 @@ import { dummyDataHeaderLiburan } from "../dummy";
 
 const Holiday: React.FC = () => {
   return (
-    <Layout title="Visit Kota Semarang">
+    <Layout>
       <div>
         <ContentFull 
         isHeader={true}

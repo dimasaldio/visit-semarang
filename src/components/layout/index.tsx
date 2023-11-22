@@ -5,14 +5,13 @@ import Footer from "../footer";
 
 interface IProps {
   children: ReactNode;
-  title: string;
 }
 
 const Layout:React.FC<IProps> = (props) => {
   return (
     <div className="bg-white text-black">
       <Head>
-        <title>{props.title}</title>
+        <title>Visit Kota Semarang</title>
       </Head>
       <Header />
       <main>{props.children}</main>

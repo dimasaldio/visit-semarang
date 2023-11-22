@@ -13,7 +13,7 @@ import { Divider } from "antd";
 
 const Index: React.FC = () => {
   return (
-    <Layout title="Visit Kota Semarang">
+    <Layout>
       <main className="flex flex-col bg-white text-black">
         <div className="bg-black">
           <SliderTop />
