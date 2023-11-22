@@ -9,15 +9,7 @@ const Header: React.FC = () => {
         <Link href="/">
           <div className="flex flex-row justify-between items-center mx-20">
             <div>
-              <img
-                src={dataDummyNavbar.logo}
-                alt="logoSemarang"
-                width={40}
-                height={40}
-              />
-            </div>
-            <div>
-              <p className="font-bold ml-2">PEMERINTAH KOTA SEMARANG</p>
+              <p className="font-bold ml-2">visitsemarang.</p>
             </div>
           </div>
         </Link>

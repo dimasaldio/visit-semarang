@@ -114,7 +114,7 @@ const KulinerDetail: React.FC<IKulinerDetail> = () => {
           enim eu.
         </p>
       </div>
-      <FooterHoliday href="festival" content={dummyDataKuliner.content} />
+      <FooterHoliday href="kuliner" content={dummyDataKuliner.content.slice(1,4)} />
     </Layout>
   );
 };

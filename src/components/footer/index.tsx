@@ -5,22 +5,25 @@ import {
   TwitterSquareFilled,
 } from "@ant-design/icons";
 import Link from "next/link";
+import { dataDummyNavbar } from "@/dummy";
 
 const Footer: React.FC = () => {
+  console.log(dataDummyNavbar)
   const footerSemarangKota = ["Beranda", "Festival", "Kuliner", "Heritage", "Wisata"];
   const footerRelasiTautan = ["Republik Indonesia", "Provinsi Jateng"];
   const logoContactUs = [FacebookFilled, InstagramFilled, TwitterSquareFilled];
 
   return (
+    <>
     <div className="flex flex-row justify-center items-start bg-white text-black py-4">
       <div className="flex flex-col pr-12 border-r mr-12">
         <div>
-          <p className="font-bold">visitsemarang.semarangkota.go.id</p>
+          <p className="font-bold">visitsemarang.</p>
         </div>
         <div className="pt-2">
-          {footerSemarangKota.map((item: string, i: number) => (
-            <Link key={i} href="/">
-              <p className="hover:text-[#C70039]">{item}</p>
+          {dataDummyNavbar.menu.map((item, i: number) => (
+            <Link key={i} href={item.href}>
+              <p className="hover:text-[#C70039]">{item.name}</p>
             </Link>
           ))}
         </div>
@@ -61,6 +64,8 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </div>
+    <p className="text-center text-sm border-t-2">Create by dimasaldio@gmail.com</p>
+    </>
   );
 }
 

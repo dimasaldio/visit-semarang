@@ -131,8 +131,7 @@ const dummyDataSlider = [
 ];
 
 const dataDummyNavbar = {
-  logo: "https://1.bp.blogspot.com/-_htlsqmoegY/WgUv0iXCbwI/AAAAAAAAEto/Ye4R81LIlsEndxNgV6KTCcmbLeFrav88QCLcBGAs/s1600/kota%2Bsemarang.png",
-  menu: [
+menu: [
     {
       name: "Festival",
       href: "/festival"

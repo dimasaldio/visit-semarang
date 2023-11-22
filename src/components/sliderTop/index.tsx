@@ -6,7 +6,7 @@ const SliderTop: React.FC = () => {
   const [key, setKey] = useState(0);
   return (
     <div
-      className="w-screen h-[700px] text-white bg-cover"
+      className="w-full h-[700px] text-white bg-cover"
       style={{
         backgroundImage: `url(${dummyDataSlider[key].urlImg})`,
         transition: "background-image 0.5s ease-in-out",
