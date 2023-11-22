@@ -29,12 +29,14 @@ const Index: React.FC = () => {
           <ContentGrid
             title={dummyDataHeritage.title}
             content={dummyDataHeritage.content}
+            href="heritage"
             isUnique
           />
           <Divider />
           <ContentGrid
             title={dummyDataFestival.title}
             content={dummyDataFestival.content}
+            href="festival"
           />
           <Divider />
         </div>

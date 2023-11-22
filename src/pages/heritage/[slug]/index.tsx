@@ -1,30 +1,30 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
-import { dummyDataWisata } from "@/dummy";
+import { dummyDataHeritage } from "@/dummy";
 import { RightOutlined } from "@ant-design/icons";
 import FooterHoliday from "@/components/holiday/footer";
 import Link from "next/link";
 
-interface IHolidayDetail {
+interface IHeritageDetail {
   title: string;
   description: any;
 }
 
-const HolidayDetail: React.FC<IHolidayDetail> = () => {
+const HeritageDetail: React.FC<IHeritageDetail> = () => {
   const router = useRouter();
-  const data = dummyDataWisata.content.find(
+  const data = dummyDataHeritage.content.find(
     (item) => String(item.id) === router.query.slug
   );
   const breadcrumItem = [
     {
       title: "Home",
       href: "/",
-      className: "text-[#F3EEEA] hover:border-b-2",
+      className: "text-[#F3EEEA]",
     },
     {
-      title: "Holiday",
-      href: "/holiday",
+      title: "Heritage",
+      href: "/heritage",
       className: "text-[#F3EEEA] hover:border-b-2",
     },
     {
@@ -40,7 +40,7 @@ const HolidayDetail: React.FC<IHolidayDetail> = () => {
         <div className="font-bold mx-6 py-2 text-xs">
           {breadcrumItem.map((item, index) => (
             <>
-              <Link href={item?.href}>
+             <Link href={item?.href}>
                 <span key={index} className={`mx-2 ${item.className}`}>
                   {item.title}
                 </span>
@@ -114,9 +114,9 @@ const HolidayDetail: React.FC<IHolidayDetail> = () => {
           enim eu.
         </p>
       </div>
-      <FooterHoliday href="holiday" content={dummyDataWisata.content} />
+      <FooterHoliday href="heritage" content={dummyDataHeritage.content} />
     </Layout>
   );
 };
 
-export default HolidayDetail;
+export default HeritageDetail;
