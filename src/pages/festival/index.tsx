@@ -57,7 +57,7 @@ const Festival: React.FC = () => {
                   ut consequat semper.
                 </p>
                 <Link href={`/festival/${item.id}`}>
-                  <button className="cursor-pointer hover:border-b-2 text-[#265073]">
+                  <button className="cursor-pointer hover:border-b-2 text-[#265073] font-bold my-4">
                     See More
                   </button>
                 </Link>

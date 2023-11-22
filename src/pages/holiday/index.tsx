@@ -57,7 +57,7 @@ const Holiday: React.FC = () => {
                   ut consequat semper.
                 </p>
                 <Link href={`/holiday/${item.id}`}>
-                  <button className="cursor-pointer hover:border-b-2 text-[#265073]">
+                  <button className="cursor-pointer hover:border-b-2 text-[#265073] my-4 font-bold">
                     See More
                   </button>
                 </Link>
