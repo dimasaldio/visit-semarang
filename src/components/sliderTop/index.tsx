@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FooterSlider from "./component/footerSlider";
-import { dummyDataSlider } from "@/pages/dummy";
+import { dummyDataSlider } from "@/dummy";
 
 const SliderTop: React.FC = () => {
   const [key, setKey] = useState(0);

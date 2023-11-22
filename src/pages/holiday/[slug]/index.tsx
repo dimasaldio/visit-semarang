@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
-import { dummyDataWisata } from "@/pages/dummy";
+import { dummyDataWisata } from "@/dummy";
 import { RightOutlined } from "@ant-design/icons";
 import FooterHoliday from "@/components/holiday/footer";
 

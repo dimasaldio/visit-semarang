@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { dataDummyNavbar } from "@/pages/dummy";
+import { dataDummyNavbar } from "@/dummy";
 
 const Header: React.FC = () => {
   return (

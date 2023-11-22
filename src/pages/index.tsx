@@ -8,7 +8,7 @@ import {
   dummyDataWisata,
   dummyDataFestival,
   dummyDataKuliner,
-} from "./dummy";
+} from "../dummy";
 import { Divider } from "antd";
 
 const Index: React.FC = () => {

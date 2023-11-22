@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@/components/layout";
 import ContentFull from "@/components/content/contentFull";
-import { dummyDataHeaderLiburan } from "../dummy";
+import { dummyDataHeaderLiburan } from "../../dummy";
 
 const Holiday: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { gambarFooter } from "@/pages/dummy";
+import { gambarFooter } from "@/dummy";
 
 const FooterSlider: React.FC = () => {
   return (

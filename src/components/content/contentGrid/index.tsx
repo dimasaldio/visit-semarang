@@ -1,7 +1,7 @@
 import { ArrowRightOutlined, SmileTwoTone } from "@ant-design/icons";
 import React from "react";
 import { Divider } from "antd";
-import { IListWisata } from "@/pages/interface";
+import IListWisata from "@/interface";
 import Link from "next/link";
 
 const ContentGrid: React.FC<IListWisata> = ({

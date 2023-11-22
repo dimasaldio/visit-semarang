@@ -3,7 +3,7 @@ interface IContent {
   urlImg: string;
   subtitle: string;
 }
-export interface IListWisata {
+export default interface IListWisata {
   title: string;
   content: IContent[];
   isUnique?: boolean;

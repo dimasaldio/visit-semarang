@@ -2,7 +2,7 @@ import React from "react";
 import { RightCircleFilled, SmileTwoTone } from "@ant-design/icons";
 import { Divider } from "antd";
 import Link from "next/link";
-import { IListWisata } from "@/pages/interface";
+import IListWisata from "@/interface";
 
 const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader }) => {
   return (

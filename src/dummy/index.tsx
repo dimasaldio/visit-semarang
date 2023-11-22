@@ -1,4 +1,4 @@
-import { IListWisata } from "../interface";
+import IListWisata from "../interface";
 
 const dummyDataWisata: IListWisata = {
   title: "Liburan. Terbuat di Semarang",
