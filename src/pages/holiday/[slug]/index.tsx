@@ -4,6 +4,8 @@ import Layout from "@/components/layout";
 import { dummyDataWisata } from "@/dummy";
 import { RightOutlined } from "@ant-design/icons";
 import FooterHoliday from "@/components/holiday/footer";
+import ContentFull from "@/components/content/contentFull";
+
 
 interface IHolidayDetail {
   title: string;
