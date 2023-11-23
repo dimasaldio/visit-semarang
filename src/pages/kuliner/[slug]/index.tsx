@@ -23,7 +23,7 @@ const KulinerDetail: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await dummyDataKuliner.content.slice(1,dummyDataKuliner.content.length).find(
+      const result = await dummyDataKuliner.content.find(
         (item) => String(item.id) === router.query.slug
       );
 

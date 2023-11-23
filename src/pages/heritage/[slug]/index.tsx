@@ -59,10 +59,7 @@ const HeritageDetail: React.FC<IHeritageDetail> = () => {
       ) : (
         <>
           <ContentDetail content={data} />
-          <FooterDetail
-            href="heritage"
-            content={dummyDataHeritage.content}
-          />
+          <FooterDetail href="heritage" content={dummyDataHeritage.content} />
         </>
       )}
     </Layout>

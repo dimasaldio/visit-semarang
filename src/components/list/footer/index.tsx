@@ -65,12 +65,12 @@ const FooterDetail: React.FC<IFooterDetail> = ({ content, href }) => {
         </div>
       </div>
       <button
-        className={`fixed bottom-0 right-0 bg-[#FF9209] rounded-2xl text-white p-4 m-4 lg:m-4 ${
+        className={`fixed bottom-0 right-0 bg-[#FF9209] opacity-70 rounded-2xl text-white p-4 m-4 lg:m-4 ${
           showButton ? "transition-transform duration-500 ease-in-out" : ""
         }`}
         onClick={handleClickScrollTop}
         style={{
-          transform: showButton ? "translateY(0)" : "translateY(100px)",
+          transform: showButton ? "translateY(-50px)" : "translateY(100px)",
         }}
       >
         <UpCircleOutlined className="text-[2rem]" />
