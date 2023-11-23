@@ -12,8 +12,8 @@ const BreadcrumbContent: React.FC<IBreadcrumb> = ({ breadcrumItem }) => {
         <div className="font-bold lg:mx-6 py-2 text-xs">
           {breadcrumItem.map((item:any, index:number) => (
             <>
-              <Link href={item?.href}>
-                <span key={index} className={`mx-2 ${item.className}`}>
+              <Link key={index} href={item?.href}>
+                <span  className={`mx-2 ${item.className}`}>
                   {item.title}
                 </span>
               </Link>

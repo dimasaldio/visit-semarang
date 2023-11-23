@@ -10,7 +10,7 @@ const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader, href }) 
       {!isHeader && (
         <>
         <div>
-          <p className="lg:text-2xl font-semibold lg:mx-[180px]">
+          <p className="lg:text-2xl text-xs font-semibold lg:mx-[180px] mx-8">
             <SmileTwoTone twoToneColor="#C70039" /> {title}
           </p>
         </div>
@@ -23,7 +23,7 @@ const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader, href }) 
           backgroundImage: `url(${content[0].urlImg})`,
         }}
       >
-        <div className="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:pl-24">
+        <div className="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:pl-24 pl-8">
           {!isHeader ? (
             <>
               <div>
