@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
 import { dummyDataFestival } from "@/dummy";
@@ -10,12 +10,29 @@ interface IFestivalDetail {
   title: string;
   description: any;
 }
+interface IContentFestival {
+  id: number;
+  urlImg: string;
+  subtitle: string;
+}
 
 const FestivalDetail: React.FC<IFestivalDetail> = () => {
   const router = useRouter();
-  const data = dummyDataFestival.content.find(
-    (item) => String(item.id) === router.query.slug
-  );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [data, setData] = useState<IContentFestival | undefined>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await dummyDataFestival.content.find(
+        (item) => String(item.id) === router.query.slug
+      );
+
+      setData(result);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [router.query.slug]);
   const breadcrumItem = [
     {
       title: "Home",
@@ -36,9 +53,15 @@ const FestivalDetail: React.FC<IFestivalDetail> = () => {
 
   return (
     <Layout>
-      <BreadcrumbContent breadcrumItem={breadcrumItem}/>
-      <ContentDetail content={data} />
-      <FooterDetail href="festival" content={dummyDataFestival.content} />
+      <BreadcrumbContent breadcrumItem={breadcrumItem} />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <ContentDetail content={data} />
+          <FooterDetail href="festival" content={dummyDataFestival.content} />
+        </>
+      )}
     </Layout>
   );
 };

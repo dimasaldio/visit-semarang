@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
 import { dummyDataHeritage } from "@/dummy";
@@ -10,12 +10,29 @@ interface IHeritageDetail {
   title: string;
   description: any;
 }
+interface IContentHeritage {
+  id: number;
+  urlImg: string;
+  subtitle: string;
+}
 
 const HeritageDetail: React.FC<IHeritageDetail> = () => {
   const router = useRouter();
-  const data = dummyDataHeritage.content.find(
-    (item) => String(item.id) === router.query.slug
-  );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [data, setData] = useState<IContentHeritage | undefined>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await dummyDataHeritage.content.find(
+        (item) => String(item.id) === router.query.slug
+      );
+
+      setData(result);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [router.query.slug]);
   const breadcrumItem = [
     {
       title: "Home",
@@ -37,8 +54,17 @@ const HeritageDetail: React.FC<IHeritageDetail> = () => {
   return (
     <Layout>
       <BreadcrumbContent breadcrumItem={breadcrumItem} />
-      <ContentDetail content={data} />
-      <FooterDetail href="heritage" content={dummyDataHeritage.content} />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <ContentDetail content={data} />
+          <FooterDetail
+            href="heritage"
+            content={dummyDataHeritage.content}
+          />
+        </>
+      )}
     </Layout>
   );
 };

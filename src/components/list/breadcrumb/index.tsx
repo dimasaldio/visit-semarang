@@ -8,11 +8,11 @@ interface IBreadcrumb {
 const BreadcrumbContent: React.FC<IBreadcrumb> = ({ breadcrumItem }) => {
   return (
     <>
-      <div className="border-t-2 bg-[#776B5D] lg:flex hidden">
-        <div className="font-bold lg:mx-6 py-2 text-xs">
+      <div className="border-t-2 bg-[#776B5D] lg:flex hidden w-full">
+        <div className="font-bold lg:mx-6 py-2 text-xs w-full flex">
           {breadcrumItem.map((item:any, index:number) => (
-            <>
-              <Link key={index} href={item?.href}>
+            <div key={index}>
+              <Link href={item?.href}>
                 <span  className={`mx-2 ${item.className}`}>
                   {item.title}
                 </span>
@@ -20,7 +20,7 @@ const BreadcrumbContent: React.FC<IBreadcrumb> = ({ breadcrumItem }) => {
               {!(index === breadcrumItem.length - 1) && (
                 <RightOutlined className={item.className} />
               )}
-            </>
+            </div>
           ))}
         </div>
       </div>

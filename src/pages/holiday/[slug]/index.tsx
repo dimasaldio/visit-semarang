@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/layout";
 import { dummyDataWisata } from "@/dummy";
@@ -10,12 +10,29 @@ interface IHolidayDetail {
   title: string;
   description: any;
 }
+interface IContentHoliday {
+  id: number;
+  urlImg: string;
+  subtitle: string;
+}
 
 const HolidayDetail: React.FC<IHolidayDetail> = () => {
   const router = useRouter();
-  const data = dummyDataWisata.content.find(
-    (item) => String(item.id) === router.query.slug
-  );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [data, setData] = useState<IContentHoliday | undefined>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await dummyDataWisata.content.find(
+        (item) => String(item.id) === router.query.slug
+      );
+
+      setData(result);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [router.query.slug]);
   const breadcrumItem = [
     {
       title: "Home",
@@ -37,8 +54,17 @@ const HolidayDetail: React.FC<IHolidayDetail> = () => {
   return (
     <Layout>
       <BreadcrumbContent breadcrumItem={breadcrumItem} />
-      <ContentDetail content={data} />
-      <FooterDetail href="holiday" content={dummyDataWisata.content} />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <ContentDetail content={data} />
+          <FooterDetail
+            href="holiday"
+            content={dummyDataWisata.content}
+          />
+        </>
+      )}
     </Layout>
   );
 };

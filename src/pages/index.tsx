@@ -15,11 +15,11 @@ const Index: React.FC = () => {
   return (
     <Layout>
       <main className="flex flex-col bg-white text-black">
-        <div className="bg-black">
+        <div className="overflow-hidden">
           <SliderTop />
         </div>
         <Divider />
-        <div className="lg:mx-[180px] mx-8">
+        <div className="lg:mx-[180px] mx-8 overflow-hidden">
           <ContentGrid
             title={dummyDataWisata.title}
             content={dummyDataWisata.content}
