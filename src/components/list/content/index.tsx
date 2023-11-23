@@ -14,8 +14,7 @@ const ContentList: React.FC<IListContent> = ({ content, href }) => {
   return (
     <div className="lg:mx-[180px] mx-8 overflow-hidden">
       {content.map((item, index) => (
-        <Link key={index} href={`/${href}/${item.id}`}>
-          <div className="grid grid-cols-2 gap-4 w-full justify-center border-t-2 lg:my-0 my-4">
+          <div key={index} className="grid grid-cols-2 gap-4 w-full justify-center border-t-2 lg:my-0 my-4">
             {index % 2 !== 0 && (
               <div
                 className="w-full h-auto lg:h-[500px] bg-cover bg-right overflow-hidden rounded-2xl my-8"
@@ -67,7 +66,6 @@ const ContentList: React.FC<IListContent> = ({ content, href }) => {
               />
             )}
           </div>
-        </Link>
       ))}
     </div>
   );
