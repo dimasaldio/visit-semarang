@@ -27,7 +27,7 @@ const Holiday: React.FC = () => {
             title="Liburan Semarang"
             content={dummyDataHeaderLiburan.content}
           />
-          <ContentList content={data} href="festival" />
+          <ContentList content={data} href="holiday" />
         </div>
       )}
     </Layout>

@@ -27,7 +27,7 @@ const Heritage: React.FC = () => {
             title="Heritage Semarang"
             content={dummyDataHeaderLiburan.content}
           />
-          <ContentList content={data} href="festival" />
+          <ContentList content={data} href="heritage" />
         </div>
       )}
     </Layout>

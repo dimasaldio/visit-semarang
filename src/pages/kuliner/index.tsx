@@ -27,7 +27,7 @@ const Kuliner: React.FC = () => {
             title="Kuliner Semarang"
             content={dummyDataHeaderLiburan.content}
           />
-          <ContentList content={data} href="festival" />
+          <ContentList content={data} href="kuliner" />
         </div>
       )}
     </Layout>
