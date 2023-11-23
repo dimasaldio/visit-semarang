@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
   return (
     <>
       <div className="overflow-x-scroll md:overflow-auto">
-        <div className="flex flex-row md:justify-center items-start bg-white text-black py-4 md:w-full w-[500px] md:mx-0 mx-4">
-          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4">
+        <div className="flex flex-row md:justify-center items-start bg-white text-black py-4 md:w-full w-[500px] md:mx-0 mx-8">
+          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4 pr-4">
             <div>
               <p className="font-bold md:text-md text-sm">visitsemarang.</p>
             </div>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4">
+          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4 pr-4">
             <div>
               <p className="font-bold md:text-md text-sm">Relasi Tautan</p>
             </div>
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4">
+          <div className="flex flex-col md:pr-12 border-r md:mr-12 mr-4 pr-4">
             <div>
               <p className="font-bold md:text-md text-sm">Turis Hotline</p>
             </div>
