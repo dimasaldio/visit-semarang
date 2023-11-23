@@ -23,7 +23,7 @@ const ContentList: React.FC<IListContent> = ({ content, href }) => {
                 }}
               />
             )}
-            <div className="flex flex-col">
+            <div className="flex flex-col my-4">
               <div className="flex flex-row items-center">
                 <p className="mr-4 font-bold lg:text-[4rem] text-[2rem] text-[#FF9209]">
                   {item.id}

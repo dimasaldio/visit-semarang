@@ -28,7 +28,7 @@ const ContentDetail: React.FC<IListContent> = ({ content }) => {
         <p id="author" className="text-center my-8 font-bold">
           Oleh Lorem Ipsum
         </p>
-        <p id="content" className="lg:mx-[200px] mx-12 my-8 text-justify">
+        <p id="content" className="lg:mx-[200px] my-8 text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla
           malesuada pellentesque elit eget gravida cum sociis. Elementum
@@ -56,13 +56,13 @@ const ContentDetail: React.FC<IListContent> = ({ content }) => {
           orci sagittis eu volutpat odio. Placerat vestibulum lectus mauris
           ultrices.
         </p>
-        <div className="lg:mx-[200px] mx-12 my-8 overflow-hidden">
+        <div className="lg:mx-[200px] my-8 overflow-hidden">
           <img
             src="https://wallpapercave.com/wp/wp4511355.jpg"
             className="w-full h-auto"
           />
         </div>
-        <p id="content" className="lg:mx-[200px] mx-12 my-8 text-justify">
+        <p id="content" className="lg:mx-[200px] my-8 text-justify">
           Tincidunt vitae semper quis lectus nulla at. Maecenas sed enim ut sem
           viverra aliquet eget. Commodo odio aenean sed adipiscing diam donec
           adipiscing tristique risus. Vulputate sapien nec sagittis aliquam
