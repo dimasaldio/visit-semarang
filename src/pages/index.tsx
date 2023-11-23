@@ -19,7 +19,7 @@ const Index: React.FC = () => {
           <SliderTop />
         </div>
         <Divider />
-        <div className="mx-[180px]">
+        <div className="lg:mx-[180px] mx-8">
           <ContentGrid
             title={dummyDataWisata.title}
             content={dummyDataWisata.content}

@@ -4,8 +4,8 @@ import { dataDummyNavbar } from "@/dummy";
 
 const Header: React.FC = () => {
   return (
-    <div className="bg-white text-black py-4 bg-opacity-[.80] sticky top-0 z-50 h-[60px]">
-      <div className="flex flex-row justify-between mr-20">
+    <div className="bg-white text-black py-4 bg-opacity-[.80] sticky top-0 z-50 w-full h-auto lg:overflow-hidden overflow-x-scroll">
+      <div className="flex flex-row justify-between lg:mr-20">
         <Link href="/">
           <div className="flex flex-row justify-between items-center mx-20">
             <div>

@@ -12,16 +12,16 @@ const ContentGrid: React.FC<IListWisata> = ({
 }) => {
   return (
     <>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between py-4">
         <div>
-          <p className="text-2xl font-semibold">
+          <p className="lg:text-2xl text-sm font-semibold">
             <SmileTwoTone twoToneColor="#C70039" /> {`${title}`}
           </p>
         </div>
         {content.length > 2 && (
           <div>
             <Link href={`/${href}`}>
-              <p className="text-md border-b border-[#C70039]">
+              <p className="lg:text-md text-xs border-b border-[#C70039]">
                 Jelajahi {title} Lainnya <ArrowRightOutlined />
               </p>
             </Link>
@@ -32,8 +32,8 @@ const ContentGrid: React.FC<IListWisata> = ({
       <div
         className={
           isUnique
-            ? `grid grid-cols-2 gap-4 h-[500px]`
-            : `grid grid-cols-3 gap-4 h-[500px]`
+            ? `grid grid-cols-2 gap-4 lg:h-[500px] h-[250px] w-full`
+            : `grid grid-cols-3 gap-4 lg:h-[500px] h-[250px] w-full`
         }
       >
         {isUnique ? (
@@ -44,7 +44,7 @@ const ContentGrid: React.FC<IListWisata> = ({
                 style={{ backgroundImage: `url(${content[0].urlImg})` }}
               >
                 <div className="w-full h-full bg-black bg-opacity-50">
-                  <p className="text-[#F5F7F8] font-bold text-3xl text-left p-24 text-shadow-lg">
+                  <p className="text-[#F5F7F8] font-bold lg:text-3xl text-md text-center lg:text-left lg:p-24 p-8 text-shadow-lg">
                     {content[0].subtitle}
                   </p>
                 </div>
@@ -58,7 +58,7 @@ const ContentGrid: React.FC<IListWisata> = ({
                     style={{ backgroundImage: `url(${item.urlImg})` }}
                   >
                     <div className="w-full h-full bg-black bg-opacity-50">
-                      <p className="text-[#F5F7F8] font-bold text-2xl text-left pt-20 pl-5 text-shadow-lg">
+                      <p className="text-[#F5F7F8] font-bold lg:text-2xl text-xs p-5 text-center lg:text-left lg:pt-20 p-8 lg:pl-5 text-shadow-lg">
                         {item.subtitle}
                       </p>
                     </div>
@@ -75,7 +75,7 @@ const ContentGrid: React.FC<IListWisata> = ({
                 style={{ backgroundImage: `url(${item.urlImg})` }}
               >
                 <div className="w-full h-full bg-black bg-opacity-50">
-                  <p className="text-[#F5F7F8] font-bold text-2xl text-left pt-20 pl-5 text-shadow-lg">
+                  <p className="text-[#F5F7F8] font-bold lg:text-2xl text-xs p-4 text-center lg:text-left lg:pt-20 lg:pl-5 text-shadow-lg">
                     {item.subtitle}
                   </p>
                 </div>
