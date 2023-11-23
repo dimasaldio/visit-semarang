@@ -30,12 +30,12 @@ const ContentGrid: React.FC<IListWisata> = ({
       </div>
       <Divider />
       <div
-          className={
-            !isUnique
-              ? `md:overflow-hidden overflow-x-scroll overflow-y-hidden`
-              : `overflow-hidden`
-          }
-        >
+        className={
+          !isUnique
+            ? `md:overflow-hidden overflow-x-scroll overflow-y-hidden`
+            : `overflow-hidden`
+        }
+      >
         <div
           className={
             isUnique
@@ -45,18 +45,18 @@ const ContentGrid: React.FC<IListWisata> = ({
         >
           {isUnique ? (
             <>
-              <Link href={`/${href}/${content[0].id}`}>
-                <div
-                  className="w-full h-full rounded-2xl bg-cover bg-center hover:scale-105 overflow-hidden"
-                  style={{ backgroundImage: `url(${content[0].urlImg})` }}
-                >
-                  <div className="w-full h-full bg-black bg-opacity-30">
+              <div
+                className="w-full h-full rounded-2xl bg-cover bg-center hover:scale-105 overflow-hidden"
+                style={{ backgroundImage: `url(${content[0].urlImg})` }}
+              >
+                <div className="w-full h-full bg-black bg-opacity-30">
+                  <Link href={`/${href}/${content[0].id}`}>
                     <p className="text-[#F5F7F8] font-bold lg:text-3xl text-sm text-center lg:text-left lg:p-24 p-8 text-shadow-lg">
                       {content[0].subtitle}
                     </p>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
               <div className="grid grid-rows-2 gap-4">
                 {content.slice(1, 3).map((item, index: number) => (
                   <Link key={index} href={`/${href}/${item.id}`}>
@@ -76,18 +76,19 @@ const ContentGrid: React.FC<IListWisata> = ({
             </>
           ) : (
             content.slice(0, 3).map((item, index: number) => (
-              <Link key={index} href={`/${href}/${item.id}`}>
-                <div
-                  className="w-full h-full rounded-2xl bg-center bg-cover hover:scale-105 overflow-hidden"
-                  style={{ backgroundImage: `url(${item.urlImg})` }}
-                >
-                  <div className="w-full h-full bg-black bg-opacity-30">
+              <div
+                className="w-full h-full rounded-2xl bg-center bg-cover hover:scale-105 overflow-hidden"
+                style={{ backgroundImage: `url(${item.urlImg})` }}
+                key={index}
+              >
+                <div className="w-full h-full bg-black bg-opacity-30">
+                  <Link href={`/${href}/${item.id}`}>
                     <p className="text-[#F5F7F8] font-bold lg:text-2xl text-sm p-4 text-center lg:text-left lg:pt-20 lg:pl-5 text-shadow-lg">
                       {item.subtitle}
                     </p>
-                  </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ))
           )}
         </div>
