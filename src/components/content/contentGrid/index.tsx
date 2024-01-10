@@ -4,7 +4,25 @@ import { Divider } from "antd";
 import Link from "next/link";
 import { IContents } from "@/interface";
 
-const ContentGrid: React.FC<IContents> = ({
+interface IImage {
+  url: string;
+}
+interface ICreated {
+  name: string;
+}
+interface IPost {
+  title: string;
+  slug: string;
+  shortDesc: string;
+  createdBy: ICreated;
+  headerImage: IImage;
+}
+interface IContentProps {
+  posts: IPost[];
+  slug: string;
+  title: string;
+}
+const ContentGrid: React.FC<IContentProps> = ({
   posts,
   slug,
   title,

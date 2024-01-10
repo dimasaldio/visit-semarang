@@ -7,8 +7,38 @@ import { Divider } from "antd";
 import graphqlClient from "@/lib/graphql/appoloClient";
 import { GetServerSideProps } from "next";
 import { GET_CATEGORIES, GET_HEADER } from "@/lib/graphql/queries";
-import { IHome } from "@/interface";
 
+interface IImage {
+  url: string;
+}
+interface ICreated {
+  name: string;
+}
+interface IPost {
+  title: string;
+  slug: string;
+  shortDesc: string;
+  createdBy: ICreated;
+  headerImage: IImage;
+}
+interface IContentProps {
+  posts: IPost[];
+  slug: string;
+  shortDesc: string;
+  title: string;
+  isHeader: boolean;
+  images: IImage[];
+}
+interface IHeaderProps {
+  id: string;
+  images: IImage;
+  subTitle: string;
+  title: string;
+}
+interface IHome {
+  dataHeader: IHeaderProps[];
+  dataContent: IContentProps[];
+}
 const Index: React.FC<IHome> = ({ dataHeader, dataContent }) => {
   return (
     <Layout>
