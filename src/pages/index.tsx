@@ -38,8 +38,9 @@ interface IHeaderProps {
 interface IHome {
   dataHeader: IHeaderProps[];
   dataContent: IContentProps[];
+  dataLogo: any;
 }
-const Index: React.FC<IHome> = ({ dataHeader, dataContent }) => {
+const Index: React.FC<IHome> = ({ dataHeader, dataContent, dataLogo }) => {
   return (
     <Layout>
       <main className="flex flex-col bg-white text-black">
@@ -88,6 +89,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       query: GET_CATEGORIES,
       fetchPolicy: "no-cache",
     });
+    const dataLogo = await res?.data?.logo
     const dataHeader = await res?.data?.header;
     const categories = await resCategories?.data.categories;
     const listCategories = await categories.map((item: any) => {
@@ -104,6 +106,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         dataHeader,
         categories: listCategories,
         dataContent: data,
+        dataLogo
       },
     };
   } catch (error) {

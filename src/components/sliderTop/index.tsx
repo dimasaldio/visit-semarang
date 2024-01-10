@@ -18,7 +18,6 @@ const SliderTop: React.FC<IHeader> = ({data}) => {
               {data[key]?.title}
             </p>
           </div>
-          <FooterSlider />
         </div>
         <div className="lg:mx-20 flex my-8 flex-row">
           {data?.map((item, index: number) => (

@@ -2,8 +2,7 @@ import { ArrowRightOutlined, SmileTwoTone } from "@ant-design/icons";
 import React from "react";
 import { Divider } from "antd";
 import Link from "next/link";
-import { IContents } from "@/interface";
-
+import Image from "next/image";
 interface IImage {
   url: string;
 }
@@ -22,11 +21,7 @@ interface IContentProps {
   slug: string;
   title: string;
 }
-const ContentGrid: React.FC<IContentProps> = ({
-  posts,
-  slug,
-  title,
-}) => {
+const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
   return (
     <>
       <div className="grid grid-cols-8 py-4">
@@ -62,29 +57,40 @@ const ContentGrid: React.FC<IContentProps> = ({
         >
           {slug === "heritage" ? (
             <>
-              <div
-                className="w-full h-full rounded-2xl bg-cover bg-center hover:scale-105 overflow-hidden"
-                style={{ backgroundImage: `url(${posts[0]?.headerImage?.url})` }}
-              >
-                <div className="w-full h-full bg-black bg-opacity-30">
-                  <Link href={`/${slug}/${posts[0]?.slug}`}>
-                    <p className="text-[#F5F7F8] font-bold lg:text-3xl text-sm text-center lg:text-left lg:p-24 p-8 text-shadow-lg">
-                      {posts[0]?.title}
+              <Link href={`/${slug}/${posts[0].slug}`}>
+                <div className="w-full h-full relative overflow-hidden rounded-2xl group">
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    <Image
+                      src={posts[0].headerImage?.url}
+                      alt={posts[0].title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-8 lg:p-24">
+                    <p className="text-[#F5F7F8] font-bold lg:text-3xl text-sm text-center lg:text-left text-shadow-lg">
+                      {posts[0].title}
                     </p>
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
+
               <div className="grid grid-rows-2 gap-4">
                 {posts.slice(1, 3).map((item, index: number) => (
                   <Link key={index} href={`/${slug}/${item?.slug}`}>
-                    <div
-                      className="w-full h-full rounded-2xl bg-cover hover:scale-105 bg-center overflow-hidden"
-                      style={{
-                        backgroundImage: `url(${item?.headerImage?.url})`,
-                      }}
-                    >
-                      <div className="w-full h-full bg-black bg-opacity-30">
-                        <p className="text-[#F5F7F8] font-bold lg:text-2xl text-xs p-5 text-center lg:text-left lg:pt-20 p-8 lg:pl-5 text-shadow-lg">
+                    <div className="w-full h-full relative overflow-hidden rounded-2xl group">
+                      <div className="w-full h-full rounded-2xl overflow-hidden">
+                        <Image
+                          src={item?.headerImage?.url}
+                          alt={item?.title}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-5">
+                        <p className="text-[#F5F7F8] font-bold lg:text-2xl text-xs text-center lg:text-left text-shadow-lg">
                           {item?.title}
                         </p>
                       </div>
@@ -95,19 +101,24 @@ const ContentGrid: React.FC<IContentProps> = ({
             </>
           ) : (
             posts.slice(0, 3).map((item, index: number) => (
-              <div
-                className="w-full h-full rounded-2xl bg-center bg-cover hover:scale-105 overflow-hidden"
-                style={{ backgroundImage: `url(${item?.headerImage?.url})` }}
-                key={index}
-              >
-                <div className="w-full h-full bg-black bg-opacity-30">
-                  <Link href={`/${slug}/${item?.slug}`}>
-                    <p className="text-[#F5F7F8] font-bold lg:text-2xl text-sm p-4 text-center lg:text-left lg:pt-20 lg:pl-5 text-shadow-lg">
+              <Link key={index} href={`/${slug}/${item?.slug}`}>
+                <div className="w-full h-full relative overflow-hidden rounded-2xl group">
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    <Image
+                      src={item?.headerImage?.url}
+                      alt={item?.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-4">
+                    <p className="text-[#F5F7F8] font-bold lg:text-2xl text-sm text-center lg:text-left text-shadow-lg">
                       {item?.title}
                     </p>
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))
           )}
         </div>

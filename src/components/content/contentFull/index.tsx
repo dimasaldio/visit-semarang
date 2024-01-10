@@ -2,6 +2,7 @@ import React from "react";
 import { RightCircleFilled, SmileTwoTone } from "@ant-design/icons";
 import { Divider } from "antd";
 import Link from "next/link";
+import Image from "next/image";
 
 interface IImage {
   url: string;
@@ -19,18 +20,19 @@ interface IPost {
 interface IContentProps {
   posts: IPost[];
   slug: string;
-  shortDesc: string;
   title: string;
   isHeader: boolean;
   images: IImage[];
+  shortDesc: string;
 }
+
 const ContentFull: React.FC<IContentProps> = ({
   posts,
   slug,
   title,
   isHeader,
   images,
-  shortDesc
+  shortDesc,
 }) => {
   return (
     <div className="w-full h-full flex flex-col">
@@ -44,13 +46,15 @@ const ContentFull: React.FC<IContentProps> = ({
           <Divider />
         </>
       )}
-      <div
-        className="overflow-hidden w-full lg:h-[600px] h-[400px] bg-cover lg:bg-center bg-right"
-        style={{
-          backgroundImage: `url(${images[0]?.url})`,
-        }}
-      >
-        <div className="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:px-8 px-4">
+      <div className="relative overflow-hidden w-full lg:h-[600px] h-[400px]">
+        <Image
+          src={images[0]?.url}
+          alt="Header Image"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-2xl"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:px-8 px-4">
           {!isHeader ? (
             <>
               <div>

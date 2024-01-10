@@ -5,9 +5,28 @@ import {
   TwitterSquareFilled,
 } from "@ant-design/icons";
 import Link from "next/link";
-import { dataDummyNavbar } from "@/dummy";
 
 const Footer: React.FC = () => {
+  const navbar = {
+    menu: [
+        {
+          name: "Festival",
+          href: "/festival"
+        },
+        {
+          name: "Kuliner",
+          href: "/culinary"
+        },
+        {
+          name: "Heritage",
+          href: "/heritage"
+        },
+        {
+          name: "Wisata",
+          href: "/tourism"
+        }
+      ]
+    };
   const footerSemarangKota = [
     "Beranda",
     "Festival",
@@ -27,7 +46,7 @@ const Footer: React.FC = () => {
               <p className="font-bold md:text-md text-sm">visitsemarang.</p>
             </div>
             <div className="pt-2">
-              {dataDummyNavbar.menu.map((item, i: number) => (
+              {navbar.menu.map((item, i: number) => (
                 <Link key={i} href={item.href}>
                   <p className="hover:text-[#C70039] md:text-md text-sm">
                     {item.name}

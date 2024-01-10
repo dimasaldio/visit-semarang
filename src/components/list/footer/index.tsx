@@ -1,6 +1,7 @@
 import { UpCircleOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface IImage {
   url: string;
@@ -17,7 +18,7 @@ interface IPost {
 }
 
 interface IContentProps {
-  posts: IPost[]
+  posts: IPost[];
   slug: string;
 }
 
@@ -48,6 +49,7 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
       behavior: "smooth",
     });
   };
+
   return (
     <div className="bg-[#B0A695] text-white relative w-full">
       <div className="lg:mx-[150px] py-10 mx-8">
@@ -58,11 +60,15 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
           <div className="grid grid-cols-3 lg:gap-8 gap-4 py-10 w-[1000px] lg:w-full">
             {posts.map((item, index: number) => (
               <Link key={index} href={`/${slug}/${item?.slug}`}>
-                <div
-                  className="flex flex-col items-end w-full lg:h-[500px] h-[300px] bg-cover lg:hover:scale-105 bg-center overflow-hidden"
-                  style={{ backgroundImage: `url(${item?.headerImage?.url})` }}
-                >
-                  <div className="w-full h-full bg-black bg-opacity-20">
+                <div className="relative w-full lg:h-[500px] h-[300px]">
+                  <Image
+                    src={item?.headerImage?.url}
+                    alt={item?.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute w-full h-full bg-black bg-opacity-20 flex flex-col items-end">
                     <p className="lg:text-2xl text-xl my-8 font-bold lg:font-extrabold text-center">
                       {item?.title}
                     </p>

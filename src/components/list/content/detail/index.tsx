@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 interface IImage {
@@ -24,10 +24,17 @@ interface IContentProps {
 const ContentDetail: React.FC<IContentProps> = ({ data }) => {
   return (
     <>
-      <div
-        className="w-full lg:h-[500px] h-[400px] overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: `url(${data?.headerImage?.url})` }}
-      />
+      <div className="w-full lg:h-[500px] h-[400px] relative overflow-hidden">
+        <div className="aspect-w-2 aspect-h-1">
+          <Image
+            src={data?.headerImage?.url}
+            alt="Header Image"
+            width={800}
+            height={800}
+            className="object-cover object-center w-full h-full"
+          />
+        </div>
+      </div>
       <div className="bg-white color-black mx-8 lg:mx-[180px] overflow-hidden lg:h-auto">
         <h1 className="lg:text-[2.5rem] text-2xl font-bold text-center text-[#776B5D] my-8">
           {data?.title}

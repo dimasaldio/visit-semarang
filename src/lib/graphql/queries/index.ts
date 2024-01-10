@@ -33,6 +33,11 @@ export const GET_HEADER = gql`
         }
       }
     }
+    logo: logoHeaders {
+      images {
+        url
+      }
+    }
   }
 `;
 

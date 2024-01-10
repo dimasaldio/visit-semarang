@@ -1,12 +1,18 @@
 import React from "react";
-import { gambarFooter } from "@/dummy";
+import Image from "next/image";
 
-const FooterSlider: React.FC = () => {
+interface IImage {
+  url: string
+}
+interface ILogo {
+  data: IImage[]
+}
+const FooterSlider: React.FC<ILogo> = ({data}) => {
   return (
     <div className="flex flex-row justify-center items-start text-black py-5">
-      {gambarFooter.map((item: any, index: number) => (
+      {data.map((item: any, index: number) => (
         <div key={index} className="mx-2">
-          <img src={item} alt={`logo ${index}`} width={100} height={100} />
+          <Image src={item?.url} alt={`logo ${index}`} width={100} height={100} />
         </div>
       ))}
     </div>
