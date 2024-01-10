@@ -14,7 +14,7 @@ interface ICreated {
   name: string;
 }
 interface IContent {
-  html: string;
+  html: string
 }
 interface IPost {
   title: string;
@@ -38,7 +38,7 @@ interface IContentProps {
   dataContent: IContents;
 }
 
-const FestivalDetail: React.FC<IContentProps> = ({ data, dataContent }) => {
+const CulinaryDetail: React.FC<IContentProps> = ({ data, dataContent }) => {
   const breadcrumItem = [
     {
       title: "Home",
@@ -46,7 +46,7 @@ const FestivalDetail: React.FC<IContentProps> = ({ data, dataContent }) => {
       className: "text-[#F3EEEA]",
     },
     {
-      title: "Festival",
+      title: "Kuliner",
       href: `/${dataContent.slug}`,
       className: "text-[#F3EEEA] hover:border-b-2",
     },
@@ -63,7 +63,7 @@ const FestivalDetail: React.FC<IContentProps> = ({ data, dataContent }) => {
       <ContentDetail data={data} />
       <FooterDetail
         slug={dataContent.slug}
-        posts={dataContent.posts.slice(0, 3)}
+        posts={dataContent.posts.slice(1, 4)}
       />
     </Layout>
   );
@@ -79,7 +79,7 @@ export const getServerSideProps: GetServerSideProps = async (context: {
       fetchPolicy: "no-cache",
     });
     const dataContent = await res?.data?.content.find((item: any) => {
-      return item.slug === "festival";
+      return item.slug === "culinary";
     });
     const data = await dataContent.posts.find((a: any) => {
       return a.slug === slug;
@@ -100,4 +100,4 @@ export const getServerSideProps: GetServerSideProps = async (context: {
   }
 };
 
-export default FestivalDetail;
+export default CulinaryDetail;

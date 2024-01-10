@@ -27,10 +27,10 @@ interface IContentProps {
   isHeader: boolean;
   images: IImage[];
 }
-interface IHeritage {
+interface ITourism {
   data: IContentProps;
 }
-const Heritage: React.FC<IHeritage> = ({ data }) => {
+const Tourism: React.FC<ITourism> = ({ data }) => {
   return (
     <Layout>
       <div>
@@ -56,7 +56,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     });
     const dataContent = await res?.data?.content;
     const data = await dataContent.find((a: any) => {
-      return a.slug === "heritage";
+      return a.slug === "tourism";
     });
     return {
       props: {
@@ -73,4 +73,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 };
 
-export default Heritage;
+export default Tourism;

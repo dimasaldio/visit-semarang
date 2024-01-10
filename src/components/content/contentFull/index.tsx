@@ -2,39 +2,66 @@ import React from "react";
 import { RightCircleFilled, SmileTwoTone } from "@ant-design/icons";
 import { Divider } from "antd";
 import Link from "next/link";
-import IListWisata from "@/interface";
 
-const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader, href }) => {
+interface IImage {
+  url: string;
+}
+interface ICreated {
+  name: string;
+}
+interface IPost {
+  title: string;
+  slug: string;
+  shortDesc: string;
+  createdBy: ICreated;
+  headerImage: IImage;
+}
+interface IContentProps {
+  posts: IPost[];
+  slug: string;
+  shortDesc: string;
+  title: string;
+  isHeader: boolean;
+  images: IImage[];
+}
+const ContentFull: React.FC<IContentProps> = ({
+  posts,
+  slug,
+  title,
+  isHeader,
+  images,
+  shortDesc
+}) => {
   return (
     <div className="w-full h-full flex flex-col">
       {!isHeader && (
         <>
-        <div>
-          <p className="lg:text-2xl text-xs font-semibold lg:mx-[180px] mx-8">
-            <SmileTwoTone twoToneColor="#C70039" /> {title}
-          </p>
-        </div>
-      <Divider />
-      </>
+          <div>
+            <p className="lg:text-2xl text-xs font-semibold lg:mx-[180px] mx-8">
+              <SmileTwoTone twoToneColor="#C70039" /> {title}
+            </p>
+          </div>
+          <Divider />
+        </>
       )}
       <div
         className="overflow-hidden w-full lg:h-[600px] h-[400px] bg-cover lg:bg-center bg-right"
         style={{
-          backgroundImage: `url(${content[0].urlImg})`,
+          backgroundImage: `url(${images[0]?.url})`,
         }}
       >
-        <div className="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:pl-24 pl-8">
+        <div className="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:px-8 px-4">
           {!isHeader ? (
             <>
               <div>
                 <p className="text-[#F5F7F8] font-bold lg:text-[2.5rem] text-[2rem] lg:w-[600px] w-full text-left text-shadow-lg">
-                  {content[0].subtitle}
+                  {title}
                 </p>
               </div>
               <div>
-                <Link href={`/${href}`}>
+                <Link href={`/${slug}`}>
                   <p className="text-[#F5F7F8] font-bold text-md text-left text-shadow-lg mt-10">
-                    Jelajahi {title}{" "}
+                    Jelajahi{" "}
                     <span>
                       <RightCircleFilled className="text-[#C70039]" />
                     </span>
@@ -45,13 +72,13 @@ const ContentFull: React.FC<IListWisata> = ({ title, content, isHeader, href }) 
           ) : (
             <>
               <div>
-                <p className="text-[#F5F7F8] font-bold lg:text-[3rem] text-[2rem] w-[600px] text-left text-shadow-lg">
+                <p className="text-[#F5F7F8] font-bold lg:text-[3rem] text-[1.5rem] w-full text-left text-shadow-lg mb-4">
                   {title}
                 </p>
               </div>
               <div>
-                <p className="text-[#F5F7F8] font-light lg:text-[1.5rem] w-[600px] text-left text-shadow-lg">
-                  {content[0].subtitle}
+                <p className="text-[#F5F7F8] font-light lg:text-[1.5rem] text-[0.8rem] w-full text-left text-shadow-lg">
+                  {shortDesc}
                 </p>
               </div>
             </>

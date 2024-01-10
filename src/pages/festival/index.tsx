@@ -1,37 +1,76 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "@/components/layout";
 import ContentFull from "@/components/content/contentFull";
-import { dummyDataHeaderLiburan } from "../../dummy";
-import { dummyDataFestival } from "../../dummy";
 import ContentList from "@/components/list/content";
+import graphqlClient from "@/lib/graphql/appoloClient";
+import { GetServerSideProps } from "next";
+import { GET_HEADER } from "@/lib/graphql/queries";
 
-const Festival: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<any[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await dummyDataFestival.content;
-      setData(result);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
+interface IImage {
+  url: string;
+}
+interface ICreated {
+  name: string;
+}
+interface IPost {
+  title: string;
+  slug: string;
+  shortDesc: string;
+  createdBy: ICreated;
+  headerImage: IImage;
+}
+interface IContentProps {
+  posts: IPost[];
+  slug: string;
+  shortDesc: string;
+  title: string;
+  isHeader: boolean;
+  images: IImage[];
+}
+interface IFestival {
+  data: IContentProps;
+}
+const Festival: React.FC<IFestival> = ({ data }) => {
   return (
     <Layout>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div>
-          <ContentFull
-            isHeader={true}
-            title="Festival Semarang"
-            content={dummyDataHeaderLiburan.content}
-          />
-          <ContentList content={data} href="festival" />
-        </div>
-      )}
+      <div>
+        <ContentFull
+          title={data.title}
+          posts={data.posts}
+          slug={data.slug}
+          isHeader={true}
+          shortDesc={data.shortDesc}
+          images={data.images}
+        />
+        <ContentList posts={data.posts} slug={data.slug} />
+      </div>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  try {
+    const res = await graphqlClient.query({
+      query: GET_HEADER,
+      fetchPolicy: "no-cache",
+    });
+    const dataContent = await res?.data?.content;
+    const data = await dataContent.find((a: any) => {
+      return a.slug === "festival";
+    });
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 };
 
 export default Festival;
