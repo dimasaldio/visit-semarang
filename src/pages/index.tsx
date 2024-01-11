@@ -50,13 +50,12 @@ const Index: React.FC<IHome> = ({ dataHeader, dataContent }) => {
         <div className="lg:mx-[180px] mx-8 overflow-hidden">
           {dataContent.map((item, index: number) => {
             return (
-              <>
+              <div key={index}>
                 {item.slug !== "culinary" ? (
                   <ContentGrid
                     title={item.title}
                     posts={item.posts}
                     slug={item.slug}
-                    key={index}
                   />
                 ) : (
                   <ContentFull
@@ -66,11 +65,10 @@ const Index: React.FC<IHome> = ({ dataHeader, dataContent }) => {
                     isHeader={false}
                     shortDesc={item.shortDesc}
                     images={item.images}
-                    key={index}
                   />
                 )}
                 <Divider />
-              </>
+              </div>
             );
           })}
         </div>

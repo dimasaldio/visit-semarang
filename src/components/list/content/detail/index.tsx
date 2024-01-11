@@ -29,9 +29,9 @@ const ContentDetail: React.FC<IContentProps> = ({ data }) => {
           <Image
             src={data?.headerImage?.url}
             alt="Header Image"
-            width={800}
-            height={800}
-            className="object-cover object-top w-full h-full lg:-translate-y-[200px]"
+            width={300}
+            height={300}
+            className="object-cover w-full h-full lg:-translate-y-[200px]"
           />
         </div>
       </div>

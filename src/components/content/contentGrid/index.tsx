@@ -26,7 +26,7 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
     <>
       <div className="grid grid-cols-8 py-4">
         <div className="md:col-span-7 col-span-6">
-          <p className="md:text-2xl text-xs font-semibold">
+          <p className="lg:text-2xl md:text-xl text-xs font-semibold">
             <SmileTwoTone twoToneColor="#C70039" /> {`${title}`}
           </p>
         </div>
@@ -44,7 +44,7 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
       <div
         className={
           slug !== "heritage"
-            ? `md:overflow-hidden overflow-x-scroll overflow-y-hidden`
+            ? `lg:overflow-hidden overflow-x-scroll overflow-y-hidden`
             : `overflow-hidden`
         }
       >
@@ -52,7 +52,7 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
           className={
             slug === "heritage"
               ? `grid grid-cols-2 gap-4 lg:h-[700px] md:h-[600px] h-[250px] w-full`
-              : `grid grid-cols-3 gap-4 lg:h-[400px] md:h-[300px] h-[250px] md:w-full w-[800px]`
+              : `grid grid-cols-3 gap-4 lg:h-[400px] md:h-[300px] h-[250px] lg:w-full w-[800px]`
           }
         >
           {slug === "heritage" ? (
@@ -63,9 +63,10 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                     <Image
                       src={posts[0].headerImage?.url}
                       alt={posts[0].title}
-                      width={800}
-                      height={800}
-                      className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
+                      width={300}
+                      height={300}
+                      priority
+                      className="object-cover w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-8 lg:p-24">
@@ -84,9 +85,10 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                         <Image
                           src={item?.headerImage?.url}
                           alt={item?.title}
-                          width={800}
-                          height={800}
-                          className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
+                          width={300}
+                          height={300}
+                          priority
+                          className="object-cover w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-5">
@@ -107,9 +109,10 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                     <Image
                       src={item?.headerImage?.url}
                       alt={item?.title}
-                      width={800}
-                      height={800}
-                      className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"  
+                      width={300}
+                      height={300}
+                      priority
+                      className="object-cover w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"  
                     />
                   </div>
                   <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-4">

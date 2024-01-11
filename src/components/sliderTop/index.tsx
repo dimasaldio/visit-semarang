@@ -13,9 +13,9 @@ const SliderTop: React.FC<IHeader> = ({ data }) => {
           <Image
             src={item?.images?.url}
             alt={item?.title}
-            width={800}
-            height={800}
-            className="object-cover object-center w-full h-full"
+            width={400}
+            height={400}
+            className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 flex flex-col justify-between bg-black bg-opacity-[0.2] items-center">
             <div className="grid grid-cols-3 h-[400px]">

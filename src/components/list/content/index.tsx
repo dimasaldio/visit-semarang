@@ -23,21 +23,21 @@ interface IContentProps {
 
 const ContentList: React.FC<IContentProps> = ({ posts, slug }) => {
   return (
-    <div className="lg:mx-[180px] mx-8 overflow-hidden">
+    <div className="lg:mx-[180px] mx-8 overflow-x-hidden overflow-y-scroll h-[800px]">
       {posts.map((item, index: number) => (
         <div
           key={index}
           className="grid grid-cols-2 gap-4 w-full justify-center border-t-2 lg:my-0 my-4"
         >
           {index % 2 !== 0 && (
-            <div className="w-full h-[100px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
+            <div className="w-full h-[150px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
               <div className="aspect-w-2 aspect-h-1">
                 <Image
                   src={item?.headerImage?.url}
                   alt={item.title}
-                  width={800}
-                  height={800}
-                  className="object-cover object-center w-full h-[150px] md:h-[300px] rounded-2xl"
+                  width={200}
+                  height={200}
+                  className="object-cover w-full h-[150px] md:h-[300px] rounded-2xl"
                 />
               </div>
             </div>
@@ -63,14 +63,14 @@ const ContentList: React.FC<IContentProps> = ({ posts, slug }) => {
             </Link>
           </div>
           {index % 2 === 0 && (
-            <div className="w-full h-[100px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
+            <div className="w-full h-[150px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
               <div className="aspect-w-2 aspect-h-1">
                 <Image
                   src={item?.headerImage?.url}
                   alt={item.title}
-                  width={800}
-                  height={800}
-                  className="object-cover object-center w-full h-[150px] md:h-[300px] rounded-2xl"
+                  width={200}
+                  height={200}
+                  className="object-cover w-full h-[150px] md:h-[300px] rounded-2xl"
                 />
               </div>
             </div>

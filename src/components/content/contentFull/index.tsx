@@ -50,9 +50,9 @@ const ContentFull: React.FC<IContentProps> = ({
         <Image
           src={images[0]?.url}
           alt="Header Image"
-          width={800}
-          height={800}
-          className="object-cover object-center w-full h-full rounded-2xl"
+          width={300}
+          height={300}
+          className="object-cover w-full h-full rounded-2xl"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start px-8 md:px-24">
           {!isHeader ? (

@@ -33,17 +33,15 @@ interface ITourism {
 const Tourism: React.FC<ITourism> = ({ data }) => {
   return (
     <Layout>
-      <div>
-        <ContentFull
-          title={data.title}
-          posts={data.posts}
-          slug={data.slug}
-          isHeader={true}
-          shortDesc={data.shortDesc}
-          images={data.images}
-        />
-        <ContentList posts={data.posts} slug={data.slug} />
-      </div>
+      <ContentFull
+        title={data.title}
+        posts={data.posts}
+        slug={data.slug}
+        isHeader={true}
+        shortDesc={data.shortDesc}
+        images={data.images}
+      />
+      <ContentList posts={data.posts} slug={data.slug} />
     </Layout>
   );
 };
