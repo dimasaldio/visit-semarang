@@ -87,7 +87,7 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
         }`}
         onClick={handleClickScrollTop}
         style={{
-          transform: showButton ? "translateY(-50px)" : "translateY(100px)",
+          transform: showButton ? "translateY(-150px)" : "translateY(200px)",
         }}
       >
         <UpCircleOutlined className="text-[2rem]" />

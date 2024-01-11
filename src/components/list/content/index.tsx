@@ -23,7 +23,7 @@ interface IContentProps {
 
 const ContentList: React.FC<IContentProps> = ({ posts, slug }) => {
   return (
-    <div className="lg:mx-[180px] mx-8 overflow-x-hidden overflow-y-scroll h-[800px]">
+    <div className="lg:mx-[180px] mx-8 overflow-x-hidden">
       {posts.map((item, index: number) => (
         <div
           key={index}

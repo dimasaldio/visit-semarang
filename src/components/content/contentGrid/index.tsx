@@ -24,14 +24,14 @@ interface IContentProps {
 const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
   return (
     <>
-      <div className="grid grid-cols-8 py-4">
-        <div className="md:col-span-7 col-span-6">
+      <div className="flex flex-row justify-between">
+        <div className="mr-4 w-[70%]">
           <p className="lg:text-2xl md:text-xl text-xs font-semibold">
             <SmileTwoTone twoToneColor="#C70039" /> {`${title}`}
           </p>
         </div>
         {posts.length > 2 && (
-          <div className="md:col-span-1 col-span-2 justify-self-end">
+          <div className="">
             <Link href={`/${slug}`}>
               <p className="md:text-md text-xs border-b border-[#C70039]">
                 Jelajahi <ArrowRightOutlined />
