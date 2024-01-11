@@ -26,14 +26,14 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
     <>
       <div className="grid grid-cols-8 py-4">
         <div className="md:col-span-7 col-span-6">
-          <p className="lg:text-2xl text-xs font-semibold">
+          <p className="md:text-2xl text-xs font-semibold">
             <SmileTwoTone twoToneColor="#C70039" /> {`${title}`}
           </p>
         </div>
         {posts.length > 2 && (
           <div className="md:col-span-1 col-span-2 justify-self-end">
             <Link href={`/${slug}`}>
-              <p className="lg:text-md text-xs border-b border-[#C70039]">
+              <p className="md:text-md text-xs border-b border-[#C70039]">
                 Jelajahi <ArrowRightOutlined />
               </p>
             </Link>
@@ -51,8 +51,8 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
         <div
           className={
             slug === "heritage"
-              ? `grid grid-cols-2 gap-4 lg:h-[500px] h-[250px] w-full`
-              : `grid grid-cols-3 gap-4 lg:h-[500px] h-[250px] md:w-full w-[800px]`
+              ? `grid grid-cols-2 gap-4 lg:h-[700px] md:h-[600px] h-[250px] w-full`
+              : `grid grid-cols-3 gap-4 lg:h-[400px] md:h-[300px] h-[250px] md:w-full w-[800px]`
           }
         >
           {slug === "heritage" ? (
@@ -63,13 +63,13 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                     <Image
                       src={posts[0].headerImage?.url}
                       alt={posts[0].title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                      width={800}
+                      height={800}
+                      className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-8 lg:p-24">
-                    <p className="text-[#F5F7F8] font-bold lg:text-3xl text-sm text-center lg:text-left text-shadow-lg">
+                    <p className="text-[#F5F7F8] font-bold lg:text-3xl md:text-2xl text-xs text-center lg:text-left text-shadow-lg">
                       {posts[0].title}
                     </p>
                   </div>
@@ -84,13 +84,13 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                         <Image
                           src={item?.headerImage?.url}
                           alt={item?.title}
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                          width={800}
+                          height={800}
+                          className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-5">
-                        <p className="text-[#F5F7F8] font-bold lg:text-2xl text-xs text-center lg:text-left text-shadow-lg">
+                        <p className="text-[#F5F7F8] font-bold md:text-[1rem] lg:text-[1.2rem] text-xs text-center md:text-left text-shadow-lg">
                           {item?.title}
                         </p>
                       </div>
@@ -107,13 +107,13 @@ const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
                     <Image
                       src={item?.headerImage?.url}
                       alt={item?.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-2xl hover:scale-105 transition-transform duration-300"
+                      width={800}
+                      height={800}
+                      className="object-cover object-center w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"  
                     />
                   </div>
                   <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-4">
-                    <p className="text-[#F5F7F8] font-bold lg:text-2xl text-sm text-center lg:text-left text-shadow-lg">
+                    <p className="text-[#F5F7F8] font-bold md:text-[1rem] lg:text-[1.2rem] text-sm text-center text-shadow-lg">
                       {item?.title}
                     </p>
                   </div>

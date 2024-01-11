@@ -9,7 +9,7 @@ interface IProps {
 
 const Layout:React.FC<IProps> = (props) => {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-white text-black lg:px-[180px] md:px-[100px] px-[20px]">
       <Head>
         <title>Visit Kota Semarang</title>
       </Head>

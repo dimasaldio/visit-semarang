@@ -30,31 +30,31 @@ const ContentList: React.FC<IContentProps> = ({ posts, slug }) => {
           className="grid grid-cols-2 gap-4 w-full justify-center border-t-2 lg:my-0 my-4"
         >
           {index % 2 !== 0 && (
-            <div className="w-full h-auto lg:h-[500px] relative overflow-hidden rounded-2xl my-8">
+            <div className="w-full h-[100px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
               <div className="aspect-w-2 aspect-h-1">
                 <Image
                   src={item?.headerImage?.url}
                   alt={item.title}
                   width={800}
                   height={800}
-                  className="object-cover object-center w-full h-full rounded-2xl"
+                  className="object-cover object-center w-full h-[150px] md:h-[300px] rounded-2xl"
                 />
               </div>
             </div>
           )}
           <div className="flex flex-col my-4">
             <div className="flex flex-row items-center">
-              <p className="mr-4 font-bold lg:text-[4rem] text-[2rem] text-[#FF9209]">
+              <p className="md:mr-4 mr-2 font-bold lg:text-[4rem] text-[2.5rem] text-[#FF9209]">
                 {index + 1}
               </p>
               <Link href={`/${slug}/${item.slug}`}>
-                <p className="text-[#265073] lg:text-[1.5rem] text-sm">
+                <p className="text-[#265073] md:text-[1.2rem] text-xs md:leading-8 font-bold">
                   {item?.title}
                 </p>
               </Link>
             </div>
-            <p className="text-[#265073] lg:text-[1rem] text-xs truncate lg:my-4 my-2">
-              {item?.shortDesc}
+            <p className="text-[#265073] md:text-[0.8rem] text-[0.5rem] lg:my-4 my-2">
+              {item?.shortDesc.slice(0,200)}{"........"}
             </p>
             <Link href={`/${slug}/${item?.slug}`}>
               <button className="cursor-pointer hover:border-b-2 text-[#265073] lg:text-base text-xs font-bold my-4">
@@ -63,14 +63,14 @@ const ContentList: React.FC<IContentProps> = ({ posts, slug }) => {
             </Link>
           </div>
           {index % 2 === 0 && (
-            <div className="lg:w-[500px] w-full h-auto lg:h-[500px] relative overflow-hidden rounded-2xl my-8">
+            <div className="w-full h-[100px] md:h-[250px] relative overflow-hidden rounded-2xl my-8">
               <div className="aspect-w-2 aspect-h-1">
                 <Image
                   src={item?.headerImage?.url}
                   alt={item.title}
                   width={800}
                   height={800}
-                  className="object-cover object-center w-full h-full rounded-2xl"
+                  className="object-cover object-center w-full h-[150px] md:h-[300px] rounded-2xl"
                 />
               </div>
             </div>

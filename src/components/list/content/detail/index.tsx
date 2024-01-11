@@ -24,25 +24,25 @@ interface IContentProps {
 const ContentDetail: React.FC<IContentProps> = ({ data }) => {
   return (
     <>
-      <div className="w-full lg:h-[500px] h-[400px] relative overflow-hidden">
+      <div className="w-full lg:h-[600px] md:h-[400px] h-[300px] relative overflow-hidden">
         <div className="aspect-w-2 aspect-h-1">
           <Image
             src={data?.headerImage?.url}
             alt="Header Image"
             width={800}
             height={800}
-            className="object-cover object-center w-full h-full"
+            className="object-cover object-top w-full h-full lg:-translate-y-[200px]"
           />
         </div>
       </div>
       <div className="bg-white color-black mx-8 lg:mx-[180px] overflow-hidden lg:h-auto">
-        <h1 className="lg:text-[2.5rem] text-2xl font-bold text-center text-[#776B5D] my-8">
+        <h1 className="lg:text-[2.5rem] text-2xl font-bold text-center text-[#776B5D] md:my-8">
           {data?.title}
         </h1>
         <p id="author" className="text-center my-8 font-bold">
           Oleh {data?.createdBy?.name}
         </p>
-        <div className="lg:mx-[200px] my-8 text-justify">
+        <div className="lg:mx-[80px] my-8 text-justify">
           <div
             dangerouslySetInnerHTML={{
               __html: data?.content?.html || "",

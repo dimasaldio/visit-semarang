@@ -38,9 +38,8 @@ interface IHeaderProps {
 interface IHome {
   dataHeader: IHeaderProps[];
   dataContent: IContentProps[];
-  dataLogo: any;
 }
-const Index: React.FC<IHome> = ({ dataHeader, dataContent, dataLogo }) => {
+const Index: React.FC<IHome> = ({ dataHeader, dataContent }) => {
   return (
     <Layout>
       <main className="flex flex-col bg-white text-black">
@@ -49,7 +48,7 @@ const Index: React.FC<IHome> = ({ dataHeader, dataContent, dataLogo }) => {
         </div>
         <Divider />
         <div className="lg:mx-[180px] mx-8 overflow-hidden">
-          {dataContent.map((item) => {
+          {dataContent.map((item, index: number) => {
             return (
               <>
                 {item.slug !== "culinary" ? (
@@ -57,6 +56,7 @@ const Index: React.FC<IHome> = ({ dataHeader, dataContent, dataLogo }) => {
                     title={item.title}
                     posts={item.posts}
                     slug={item.slug}
+                    key={index}
                   />
                 ) : (
                   <ContentFull
@@ -66,6 +66,7 @@ const Index: React.FC<IHome> = ({ dataHeader, dataContent, dataLogo }) => {
                     isHeader={false}
                     shortDesc={item.shortDesc}
                     images={item.images}
+                    key={index}
                   />
                 )}
                 <Divider />

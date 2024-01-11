@@ -39,7 +39,7 @@ const ContentFull: React.FC<IContentProps> = ({
       {!isHeader && (
         <>
           <div>
-            <p className="lg:text-2xl text-xs font-semibold lg:mx-[180px] mx-8">
+            <p className="md:text-2xl text-xs font-semibold">
               <SmileTwoTone twoToneColor="#C70039" /> {title}
             </p>
           </div>
@@ -50,15 +50,15 @@ const ContentFull: React.FC<IContentProps> = ({
         <Image
           src={images[0]?.url}
           alt="Header Image"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-2xl"
+          width={800}
+          height={800}
+          className="object-cover object-center w-full h-full rounded-2xl"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start lg:px-8 px-4">
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-start px-8 md:px-24">
           {!isHeader ? (
             <>
               <div>
-                <p className="text-[#F5F7F8] font-bold lg:text-[2.5rem] text-[2rem] lg:w-[600px] w-full text-left text-shadow-lg">
+                <p className="text-[#F5F7F8] font-bold lg:text-[2.5rem] text-[1.2rem] lg:w-[600px] w-full text-left text-shadow-lg">
                   {title}
                 </p>
               </div>

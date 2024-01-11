@@ -68,8 +68,8 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
                     objectFit="cover"
                     className="rounded-2xl hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute w-full h-full bg-black bg-opacity-20 flex flex-col items-end">
-                    <p className="lg:text-2xl text-xl my-8 font-bold lg:font-extrabold text-center">
+                  <div className="absolute w-full h-full bg-black bg-opacity-20">
+                    <p className="lg:text-3xl text-xl my-8 font-bold lg:font-extrabold text-center">
                       {item?.title}
                     </p>
                   </div>
