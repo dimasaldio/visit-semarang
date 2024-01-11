@@ -24,16 +24,16 @@ interface IContentProps {
 const ContentGrid: React.FC<IContentProps> = ({ posts, slug, title }) => {
   return (
     <>
-      <div className="flex flex-row justify-between">
-        <div className="mr-4 w-[70%]">
+      <div className="flex md:flex-row flex-col justify-between w-full overflow-hidden">
+        <div className="mr-4 md:w-[70%]">
           <p className="lg:text-2xl md:text-xl text-xs font-semibold">
             <SmileTwoTone twoToneColor="#C70039" /> {`${title}`}
           </p>
         </div>
         {posts.length > 2 && (
-          <div className="">
+          <div className="w-[100px]">
             <Link href={`/${slug}`}>
-              <p className="md:text-md text-xs border-b border-[#C70039]">
+              <p className="md:text-md text-xs border-b md:my-0 my-4 border-[#C70039]">
                 Jelajahi <ArrowRightOutlined />
               </p>
             </Link>

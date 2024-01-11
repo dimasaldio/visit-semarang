@@ -56,8 +56,8 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
         <h2 className="font-bold lg:text-[2rem] text-xl">
           ARTIKEL LAIN SEPERTI INI
         </h2>
-        <div className="overflow-x-scroll lg:overflow-hidden">
-          <div className="grid grid-cols-3 lg:gap-8 gap-4 py-10 w-[1000px] lg:h-[400px] lg:w-full">
+        <div className="overflow-x-scroll overflow-y-hidden lg:overflow-hidden">
+          <div className="grid grid-cols-3 lg:gap-8 gap-4 py-10 md:w-[1000px] w-[800px] md:h-[400px] h-[300px] lg:w-full">
             {posts.map((item, index: number) => (
               <Link key={index} href={`/${slug}/${item?.slug}`}>
               <div className="w-full h-full relative overflow-hidden rounded-2xl group">
@@ -67,7 +67,7 @@ const FooterDetail: React.FC<IContentProps> = ({ posts, slug }) => {
                     alt={item?.title}
                     width={300}
                     height={300}
-                    className="object-cover w-full h-full rounded-2xl hover:scale-105 transition-transform duration-300"  
+                    className="object-cover w-full h-full rounded-2xl transition-transform duration-300"  
                   />
                 </div>
                 <div className="w-full h-full bg-black bg-opacity-30 absolute top-0 left-0 flex flex-col justify-end p-4">
